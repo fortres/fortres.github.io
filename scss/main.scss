@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'Blackoak Std';
+  src: url('fonts/blackoak-std.woff') format('woff2'),
+  url('fonts/blackoak-std.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('fonts/myriadPro-regular.woff') format('woff2'),
+  url('fonts/myriadPro-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+$break_point_large: 1124px;
+$break_point_medium: 768px;
+$break_point_small: 576px;
+
+// rems and ems, and why you probably don’t need them
+// https://medium.com/hackernoon/rems-and-ems-and-why-you-probably-dont-need-them-664b9ce1e09f
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  @include flexbox;
+  @include flex-direction(column);
+
+  min-height: 100%;
+  // height: 1980px; fixed height in design
+
+
+  .header {
+    text-align: center;
+    background:  #fff;
+  }
+
+  .logo {
+    font: bold 72px/197px 'Blackoak Std', Georgia, 'Times New Roman', serif;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .content {
+    @include flexbox;
+    @include align-items(center);
+    @include flex(1 0 auto);
+    @include gradient(#4ad5b8, #3ae171, vertical);
+
+    padding: 60px 110px 69px;
+  }
+
+  .code-container {
+    width: 904px;
+    padding: 108px 102px;
+    margin: auto;
+    border-radius: 9px;
+    text-align: center;
+    background: #f9f9f9;
+    box-shadow: 0 9px 0 #d4d4d4;
+  }
+
+  .title-code-container {
+    max-width: 375px;
+    margin: auto;
+    font: 400 48px 'Myriad Pro', sans-serif;
+    text-align: center;
+    color: #000;
+  }
+
+  .input-code-container {
+    width: 699px;
+    height: 129px;
+    margin: 80px auto 39px;
+    border: 5px solid #ddd;
+    border-radius: 20px;
+    font: 700 48px sans-serif; // I could not find 'Supercell Text' font
+    text-transform: uppercase;
+    text-align: center;
+    color: #3ae171;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: rgba(#000, .5);
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: rgba(#000, .5);
+    }
+
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: rgba(#000, .5);
+    }
+  }
+
+  .button-code-container {
+    width: 525px;
+    height: 129px;
+    margin: auto;
+    border: 0;
+    border-radius: 20px;
+    background: #3ae171;
+    font: 700 35px sans-serif; // I could not find 'Supercell Text' font
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s background;
+
+    &:hover {
+      background: darken(#3ae171, 10%)
+    }
+  }
+
+  .footer {
+    @include flexbox;
+    @include flex(0 0 auto);
+    @include align-items(center);
+
+    height: 253px;
+    background: #000;
+  }
+
+  .copyright {
+    padding: 0 69px;
+    color: #676767;
+    font: 400 41px 'Myriad Pro', sans-serif;
+  }
+
+  @media only screen and (max-width: $break_point_large)  {
+    .logo {
+      font: bold 50px/120px "Blackoak Std", Georgia, "Times New Roman", serif;
+    }
+
+    .content {
+      padding: 40px (80/1124 *100%) 49px;
+    }
+
+    .code-container {
+      width: 904/1124 *100%;
+      padding: 70px 80/1124 *100%;
+    }
+
+    .input-code-container,
+    .button-code-container {
+      width: 100%;
+      height: 70px;
+      border-radius: 15px;
+    }
+
+    .input-code-container {
+      height: 70px;
+      margin: 30px auto 20px;
+      font: 700 28px/28px sans-serif;
+    }
+
+    .button-code-container {
+      font: 700 26px/26px sans-serif;
+    }
+
+    .copyright,
+    .title-code-container {
+      font: 400 36px 'Myriad Pro', sans-serif;
+    }
+  }
+
+  @media only screen and (max-width: $break_point_medium)  {
+    .content {
+      padding: 20px (40/768 *100%) 29px;
+    }
+
+    .code-container {
+      padding: 30px 40/768 *100%;
+    }
+
+    .input-code-container {
+      font: 700 28px/28px sans-serif;
+    }
+
+    .button-code-container {
+      font: 700 24px/24px sans-serif;
+    }
+
+    .logo {
+      font: bold 28px/120px "Blackoak Std", Georgia, "Times New Roman", serif;
+    }
+
+    .copyright,
+    .title-code-container {
+      font: 400 28px 'Myriad Pro', sans-serif;
+    }
+
+    .footer {
+      height: 180px;
+    }
+  }
+
+  @media only screen and (max-width: $break_point_small)  {
+    .logo {
+      font: bold 24px/90px "Blackoak Std", Georgia, "Times New Roman", serif;
+    }
+
+    .code-container {
+      width: 100%;
+    }
+
+    .input-code-container,
+    .button-code-container {
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    .input-code-container {
+      border-width: 3px;
+      font: 700 20px/20px sans-serif;
+    }
+
+    .button-code-container {
+      font: 700 18px/18px sans-serif;
+    }
+
+    .footer {
+      height: 120px;
+    }
+  }
+}
