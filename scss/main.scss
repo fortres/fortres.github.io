@@ -71,7 +71,7 @@ body {
     width: 904px;
     padding: 91px 102px 108px;
     margin: auto;
-    border-radius: 9px;
+    border-radius: 20px;
     text-align: center;
     background: #f9f9f9;
     box-shadow: 0 9px 0 #d4d4d4;
@@ -217,6 +217,7 @@ body {
 
     .code-container {
       width: 100%;
+      border-radius: 10px;
     }
 
     .input-code-container,
