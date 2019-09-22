@@ -144,7 +144,7 @@ body {
 
   @media only screen and (max-width: $break_point_large)  {
     .logo {
-      font: bold 50px/120px "Blackoak Std", Georgia, "Times New Roman", serif;
+      font: bold 50px/120px 'Blackoak Std', Georgia, 'Times New Roman', serif;
     }
 
     .content {
@@ -197,7 +197,7 @@ body {
     }
 
     .logo {
-      font: bold 28px/120px "Blackoak Std", Georgia, "Times New Roman", serif;
+      font: bold 28px/100px 'Blackoak Std', Georgia, 'Times New Roman', serif;
     }
 
     .copyright,
@@ -212,7 +212,7 @@ body {
 
   @media only screen and (max-width: $break_point_small)  {
     .logo {
-      font: bold 24px/90px "Blackoak Std", Georgia, "Times New Roman", serif;
+      font: bold 24px/80px 'Blackoak Std', Georgia, 'Times New Roman', serif;
     }
 
     .code-container {
